@@ -9,6 +9,7 @@ function HTMLEditor({ htmlCode, onHtmlChange }) {
                 onChange={onHtmlChange}
                 className="editor"
                 placeholder="Enter HTML code"
+                style={{ minWidth: '100%', minHeight: '400px' }}
             ></textarea>
         </section>
     );
@@ -23,6 +24,7 @@ function CSSEditor({ cssCode, onCssChange }) {
                 onChange={onCssChange}
                 className="editor"
                 placeholder="Enter CSS code"
+                style={{ minWidth: '100%', minHeight: '400px' }}
             ></textarea>
         </section>
     );
@@ -37,6 +39,7 @@ function JavaScriptEditor({ jsCode, onJsChange }) {
                 onChange={onJsChange}
                 className="editor"
                 placeholder="Enter JavaScript code"
+                style={{ minWidth: '100%', minHeight: '400px' }}
             ></textarea>
         </section>
     );

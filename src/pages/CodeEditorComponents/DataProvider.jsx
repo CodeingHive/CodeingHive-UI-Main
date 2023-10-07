@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { HTMLEditor, CSSEditor, JavaScriptEditor } from './Editor';
-import CompiledOutput from './Output';
+import PreviewFrame from './PreviewFrame';
 
 function DataProvider() {
-    const [htmlCode, setHtmlCode] = useState('<div>Hello, world!</div>');
+    const [htmlCode, setHtmlCode] = useState('<div>Welcome to Coding Hive!</div>');
     const [cssCode, setCssCode] = useState('body { background-color: lightblue; }');
     const [jsCode, setJsCode] = useState('document.querySelector("div").style.color = "red";');
-    const [output, setOutput] = useState('');
 
     const handleHtmlChange = (e) => {
         setHtmlCode(e.target.value);
@@ -21,13 +20,24 @@ function DataProvider() {
     };
 
     return (
-        <div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <h1>Code Editor</h1>
 
-            <HTMLEditor htmlCode={htmlCode} onHtmlChange={handleHtmlChange} />
-            <CSSEditor cssCode={cssCode} onCssChange={handleCssChange} />
-            <JavaScriptEditor jsCode={jsCode} onJsChange={handleJsChange} />
-            <CompiledOutput htmlCode={htmlCode} cssCode={cssCode} jsCode={jsCode} output={output} />
+            <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+                <div style={{ flex: 1, borderRight: '1px solid #ccc', padding: '0 10px' }}>
+                    <HTMLEditor htmlCode={htmlCode} onHtmlChange={handleHtmlChange} />
+                </div>
+                <div style={{ flex: 1, borderRight: '1px solid #ccc', padding: '0 10px' }}>
+                    <CSSEditor cssCode={cssCode} onCssChange={handleCssChange} />
+                </div>
+                <div style={{ flex: 1, padding: '0 10px' }}>
+                    <JavaScriptEditor jsCode={jsCode} onJsChange={handleJsChange} />
+                </div>
+            </div>
+
+            <div style={{ minWidth: '100%', marginTop: '20px', border: '1px solid #ccc', padding: '10px' }}>
+                <PreviewFrame htmlCode={htmlCode} cssCode={cssCode} jsCode={jsCode} />
+            </div>
         </div>
     );
 }
