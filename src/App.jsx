@@ -14,8 +14,8 @@ function App() {
         <hr />
 
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/CodeEditor" element={<CodeEditor />} />
+          <Route path="/" element={<CodeEditor />} />
+          <Route path="/CodeEditor" element={<Home />} />
         </Routes>
       </div>
     </Router>
