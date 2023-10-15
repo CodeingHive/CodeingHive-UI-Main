@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 
 function App() {
   const backgroundStyle = {
-    backgroundImage: `url('./src/assets/herobg.png')`,
+    backgroundImage: `url('./assets/herobg.png')`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center center',
