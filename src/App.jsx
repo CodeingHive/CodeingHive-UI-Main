@@ -8,11 +8,20 @@ import NotFound from './pages/NotFound';
 import Footer from './components/Footer';
 
 function App() {
+  const backgroundStyle = {
+    backgroundImage: `url('./src/assets/herobg.png')`,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center center',
+  };
   return (
     <Router>
-      <div>
+      <div className='gradient-bg-welcome'>
         {/* Include the Navbar component */}
         <Navbar />
+      </div>
+      <div style={backgroundStyle}>
+
 
         <hr />
 
@@ -27,8 +36,9 @@ function App() {
 
           <Route path='*' element={<NotFound />} />
         </Routes>
-
-        <Footer />
+        <div className='gradient-bg-portfolio' >
+          <Footer />
+        </div>
 
       </div>
     </Router>
