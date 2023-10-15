@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Navbar from './components/Navbar';
 import CodeEditor from './pages/HTMLRunner';
 import OnlineCompiler from './pages/OnlineCompiler';
+import NotFound from './pages/NOTFound';
 
 function App() {
   return (
@@ -16,12 +17,14 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/Home" element={<Home />} />
-          <Route path="/OnlineComplier" element={<OnlineCompiler />} />
-          <Route path="/HTMLRunner" element={<CodeEditor />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/onlinecomplier" element={<OnlineCompiler />} />
+          <Route path="/htmlrunner" element={<CodeEditor />} />
           {/* To implement
           /community
           /login */}
+
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </div>
     </Router>

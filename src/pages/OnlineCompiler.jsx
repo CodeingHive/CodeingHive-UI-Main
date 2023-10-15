@@ -8,6 +8,13 @@ const codeSnippets = {
 };
 
 const OnlineCompiler = () => {
+    const backgroundStyle = {
+        backgroundImage: `url('src/assets/herobg.png')`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center center',
+    };
+
     const [language, setLanguage] = useState('cpp');
     const [code, setCode] = useState(codeSnippets.cpp);
 
@@ -40,7 +47,7 @@ const OnlineCompiler = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gray-800 text-white">
+        <div className="min-h-screen bg-gray-800 text-white" style={backgroundStyle}>
             <div className="container mx-auto p-4">
                 <h1 className="text-2xl font-semibold mb-4">Online Code Compiler</h1>
                 <div className="bg-gray-900 p-4 rounded shadow">
