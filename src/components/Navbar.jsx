@@ -7,7 +7,7 @@ import logo from "../assets/Logo.png";
 
 const NavBarItem = ({ title, classprops, to }) => (
   <li className={`mx-4 cursor-pointer ${classprops}`}>
-    <Link to={`${to}`}>{title}</Link>
+    <Link to={to}>{title}</Link>
   </li>
 );
 
@@ -21,8 +21,8 @@ const Navbar = () => {
           <img src={logo} alt="logo" className="w-16 cursor-pointer" />
         </div>
         <ul className="text-white md:flex hidden list-none flex-row justify-between items-center flex-initial">
-          {["Coding Challanges", "Learning Resources", "Installation guide", "Community"].map((item, index) => (
-            <NavBarItem key={item + index} title={item} to="/" />
+          {["Home", "OnlineComplier", "HTMLRunner", "Community"].map((item, index) => (
+            <NavBarItem key={item + index} title={item} to={item.toLowerCase()} />
           ))}
           <li className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]">
             <Link to="/login">Login</Link>
@@ -51,9 +51,9 @@ const Navbar = () => {
               <li className="my-2 text-lg w-full mx-4 cursor-pointer">
                 <AiOutlineClose onClick={() => setToggleMenu(false)} />
               </li>
-              {["Home", "Code Editor", "Community"].map(
+              {["Home", "OnlineComplier", "HTMLRunner", "Community"].map(
                 (item, index) => (
-                  <NavBarItem key={item + index} title={item} classprops="my-2 text-lg" to="title.toLowerCase()" />
+                  <NavBarItem key={item + index} title={item} classprops="my-2 text-lg" to={item.toLowerCase()} />
                 )
               )}
             </ul>
