@@ -4,7 +4,8 @@ import Home from './pages/Home';
 import Navbar from './components/Navbar';
 import CodeEditor from './pages/HTMLRunner';
 import OnlineCompiler from './pages/OnlineCompiler';
-import NotFound from './pages/NOTFound';
+import NotFound from './pages/NotFound';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
 
           <Route path='*' element={<NotFound />} />
         </Routes>
+
+        <Footer />
+
       </div>
     </Router>
   );
